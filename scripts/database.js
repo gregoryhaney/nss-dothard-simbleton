@@ -12,9 +12,25 @@ const businesses = [
     { id: 10, purchasingAgent: { nameLast: "Torphy", nameFirst: "Celia" }, phoneWork: "(992) 079-1670 x71569", orders: [7431.21, 5911.85, 7954.86, 7141.52, 8416.79], companyName: "Ran-taxon", companyIndustry: "Manufacturing", addressZipCode: "96673", addressStateCode: "MD", addressFullStreet: "7157 Hudson Street Ford", addressCity: "Watrous" }
   ]
 
-// make copy of the data for use by other modules
-
-  // fn to make a copy of 'businesses'
+// create a FN make copy of "businesses" for use by other modules
 export const getBusinesses = () => {
     return businesses.map(business => ({...business}))
+}
+
+// create and export a new array containing ONLY
+// the businesses that are in New York
+export const businessesInNewYork = () => {
+  const filteredBusinesses = businesses.filter(business => {
+    return business.addressStateCode === "NY"
+  })
+    return filteredBusinesses
+}
+
+ // create and export a new array containing ONLY
+//  businesses that are in the "Manufacturing" industry
+export const mfgBusinessesInNewYork = () => {
+  const mfgFilteredBusinesses = businesses.filter(business => {
+    return business.companyIndustry === "Manufacturing"
+  })
+    return mfgFilteredBusinesses
 }

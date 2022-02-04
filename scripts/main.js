@@ -1,11 +1,12 @@
-import { BusinessListing } from "./BusinessList.js"
-
-
-
+import { BusinessListing, BusinessListingNY, MfgBusinessListing } from "./BusinessList.js"
 
 const businessesContainer = document.querySelector("#businessesContainer")
             const businessAppHTML = `
-            ${BusinessListing()}
+            ${BusinessListing()}            
+
+            ${BusinessListingNY()}
+
+            ${MfgBusinessListing()}
             `
 businessesContainer.innerHTML = businessAppHTML
 
