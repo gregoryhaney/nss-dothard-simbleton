@@ -33,3 +33,10 @@ h1,h2,h3,h4,h5,h6 {
 #container {
 
 }
+
+
+/* Rounded border underneath each business */
+hr.rounded {
+	border-top: 2px solid #bbb;
+	border-radius: 32x;
+  }
