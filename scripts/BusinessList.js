@@ -1,4 +1,5 @@
-import { getBusinesses, businessesInNewYork, mfgBusinessesInNewYork } from "./database.js"
+import { getBusinesses, businessesInNewYork } from "./database.js"
+import { mfgBusinessesInNewYork, getPurchasingAgents} from "./database.js"
 
 
 ////////////////////////////////////////////////////////////////////////
@@ -132,4 +133,46 @@ export const MfgBusinessListing = () => {
     )
     // return the HTML 
     return mfgBusinessListHTML
+}
+
+
+
+////////////////////////////////////////////////////////////////////////
+/////////////////// P U R C H A S I N G   A G E N T S  /////////////////
+////////////////////////////////////////////////////////////////////////
+
+
+// create and export a FN that will generate the HTML
+// for use by index.html of purchasing agents
+export const purchasingAgentsListing = () => {
+
+    // invoke the FN to get the agents
+    const purchasingAgentsArray = getPurchasingAgents()
+
+        // create the variable that will hold the HTML for
+        // list list of agents
+    let purchasingAgentsListHTML = "<h1>Purchasing Agents</h1>"
+
+            // iterate through the agents using .forEach
+            // grabbing and displaying: name, company, and phone
+                // used <br> to get the three items to be shown 
+                // on separate lines
+
+     purchasingAgentsArray.forEach((purchasingAgentsObject) => {
+
+        purchasingAgentsListHTML += `
+        <article class="agents">
+            <h2 class="agent__fullName">${purchasingAgentsObject.purchasingAgent.nameFirst} ${purchasingAgentsObject.purchasingAgent.nameLast}</h2>
+            <div class="agent__contact"> 
+                <h3 class="agent_company">${purchasingAgentsObject.companyName}<br> </h3>
+                <h4 class="agent_phone">${purchasingAgentsObject.phoneWork}</h4>
+                                                    
+                    <hr class="rounded">
+            </div>
+        </article>
+    `
+        }
+    )
+    // return the HTML 
+    return purchasingAgentsListHTML
 }

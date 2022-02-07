@@ -34,3 +34,12 @@ export const mfgBusinessesInNewYork = () => {
   })
     return mfgFilteredBusinesses
 }
+
+
+// use the .map() method to create and export an array of
+// purchasing agents for companies that purchase from D&S.
+export const getPurchasingAgents = () => {  
+    let agents = businesses.map(({purchasingAgent: {nameFirst}}) => nameFirst)
+    agents = new Set(businesses)
+    return agents
+}
