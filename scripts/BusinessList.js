@@ -1,6 +1,6 @@
 import { getBusinesses, businessesInNewYork } from "./database.js"
-import { mfgBusinessesInNewYork, getPurchasingAgents} from "./database.js"
-
+import { mfgBusinessesInNewYork, getPurchasingAgents } from "./database.js"
+//import { getMatchingBusinesses } from "./database.js"
 
 ////////////////////////////////////////////////////////////////////////
 /////////////////// A L L   C O M P A N I E S //////////////////////////
@@ -176,3 +176,33 @@ export const purchasingAgentsListing = () => {
     // return the HTML 
     return purchasingAgentsListHTML
 }
+
+
+////////////////////////////////////////////////////////////////////////
+/////////////////// B U S I N E S S   S E A R C H  /////////////////////
+////////////////////////////////////////////////////////////////////////
+
+
+export const businessSearch = () => {             
+const companySearchResults = document.querySelector(".foundCompanies")
+
+document.querySelector("#companySearch").addEventListener("keypress", keyPressEvent => {
+    if (keyPressEvent.charCode === 13) {
+        const businessList = getBusinesses()       
+
+        const enteredText = keyPressEvent.target.value.toLowerCase()
+        const foundBusiness = businessList.find(businesses => businesses.companyName.toLowerCase().includes(enteredText))
+        let BusinessMatchHTML = "<h1>Matching Business List</h1>"
+        BusinessMatchHTML += `<h2>${foundBusiness.companyName} </h2><br>
+                                ${foundBusiness.addressFullStreet}, 
+                                ${foundBusiness.addressCity},
+                                ${foundBusiness.addressStateCode}
+                                ${foundBusiness.addressZipCode}
+                                <hr class="rounded">
+                                `
+
+        companySearchResults.innerHTML = BusinessMatchHTML     
+    }
+    })
+}
+                
