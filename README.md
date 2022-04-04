@@ -12,6 +12,12 @@
 - [Bugs](https://github.com/gregoryhaney/nss-dothard-simbleton/issues "Issues Page")
 
 
+## Screenshots
+
+- [ERD]
+-  ![Screen Shot 2022-04-04 at 11 12 17 AM](https://user-images.githubusercontent.com/10354411/161586955-e895b243-821f-48d5-b333-7f64fe80dc3d.png)
+
+
 
 ## Built With
 
