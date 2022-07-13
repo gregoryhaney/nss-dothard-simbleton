@@ -1,28 +1,26 @@
 import { getBusinesses, businessesInNewYork } from "./database.js"
 import { mfgBusinessesInNewYork, getPurchasingAgents } from "./database.js"
-//import { getMatchingBusinesses } from "./database.js"
 
 ////////////////////////////////////////////////////////////////////////
 /////////////////// A L L   C O M P A N I E S //////////////////////////
 ////////////////////////////////////////////////////////////////////////
 
-
-// create and export a FN that will generate the HTML
+// Create and export a FN that will generate the HTML
 // for use by index.html
  export const BusinessListing = () => {
 
     // invoke the FN to get the businesses
     const businessArray = getBusinesses()
 
-        // create the variable that will hold the HTML for
-        // list list of businesses
+        // Create the variable that will hold the HTML for
+        // list of businesses
     let businessListHTML = "<h1>Active Businesses</h1>"
 
 
-            // iterate through the businesses using .forEach
-            // grabbing and displaying: name, street address, city, state, zip
-                // added <br> to get the city, state, zip to be shown 
-                //on the line below the street address
+            // Iterate through the businesses using .forEach
+            // Grab and display: name, street address, city, state, zip
+                // Added <br> to get the city, state, zip to be shown 
+                // on the line below the street address
 
     businessArray.forEach((businessObject) => {
 
@@ -51,30 +49,29 @@ import { mfgBusinessesInNewYork, getPurchasingAgents } from "./database.js"
 ////////////////////////////////////////////////////////////////////////
 
 /*
-    use the .filter() method to list only businesses
+    Use the .filter() method to list only businesses
     located in NY. 
-    this filter was applied in the database module
-
-    display them in an element in the HTML with a 
+    This filter was applied in the database module.
+    Display them in an element in the HTML with a 
     class of "businessList--newYork"
 */
 
-// create and export a FN that will generate the HTML
+// Create and export a FN that will generate the HTML
 // for use by index.html of ONLY New York businesses
 export const BusinessListingNY = () => {
 
-    // invoke the FN to get the businesses
+    // Invoke the FN to get the businesses
     const businessArrayNY = businessesInNewYork()
 
-        // create the variable that will hold the HTML for
-        // list list of businesses
+        // Create the variable that will hold the HTML for
+        // list of businesses
     let businessListNYHTML = "<h1>New York Businesses</h1>"
 
 
-            // iterate through the businesses using .forEach
-            // grabbing and displaying: name, street address, city, state, zip
-                // added <br> to get the city, state, zip to be shown 
-                //on the line below the street address
+            // Iterate through the businesses using .forEach
+            // Grab and display: name, street address, city, state, zip
+                // Added <br> to get the city, state, zip to be shown 
+                // on the line below the street address
 
     businessArrayNY.forEach((businessObjectNY) => {
 
@@ -99,22 +96,22 @@ export const BusinessListingNY = () => {
 /////////// M A N U F A C T U R I N G   C O M P A N I E S //////////////
 ////////////////////////////////////////////////////////////////////////
 
-// create and export a FN that will generate the HTML
+// Create and export a FN that will generate the HTML
 // for use by index.html of ONLY "Manufacturing" industry businesses
 export const MfgBusinessListing = () => {
 
-    // invoke the FN to get the businesses
+    // Invoke the FN to get the businesses
     const mfgBusinessArray = mfgBusinessesInNewYork()
 
-        // create the variable that will hold the HTML for
-        // list list of businesses
+        // Create the variable that will hold the HTML for
+        // list of businesses
     let mfgBusinessListHTML = "<h1>Manufacturing Businesses</h1>"
 
 
-            // iterate through the businesses using .forEach
-            // grabbing and displaying: name, street address, city, state, zip
-                // added <br> to get the city, state, zip to be shown 
-                //on the line below the street address
+            // Iterate through the businesses using .forEach
+            // Grab and display: name, street address, city, state, zip
+                // Added <br> to get the city, state, zip to be shown 
+                // on the line below the street address
 
     mfgBusinessArray.forEach((mfgBusinessObject) => {
 
@@ -142,20 +139,20 @@ export const MfgBusinessListing = () => {
 ////////////////////////////////////////////////////////////////////////
 
 
-// create and export a FN that will generate the HTML
+// Create and export a FN that will generate the HTML
 // for use by index.html of purchasing agents
 export const purchasingAgentsListing = () => {
 
-    // invoke the FN to get the agents
+    // Invoke the FN to get the purchasing agents
     const purchasingAgentsArray = getPurchasingAgents()
 
-        // create the variable that will hold the HTML for
-        // list list of agents
+        // Create the variable that will hold the HTML for
+        // list of agents
     let purchasingAgentsListHTML = "<h1>Purchasing Agents</h1>"
 
-            // iterate through the agents using .forEach
-            // grabbing and displaying: name, company, and phone
-                // used <br> to get the three items to be shown 
+            // Iterate through the agents using .forEach
+            // Grab and display: name, company, and phone
+                // Used <br> to get the three items to be shown 
                 // on separate lines
 
      purchasingAgentsArray.forEach((purchasingAgentsObject) => {
